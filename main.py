@@ -36,4 +36,17 @@ def get_weather_gui(api_key, city):
 
 api_key = '50958e31edcbbe4e49f8a733f4c117e8'
 
+root = tk.Tk()
+root.title("Weather App")
 
+frame = tk.Frame(root)
+frame.pack(padx=10,pady=10)
+
+city_entry = tk.Entry(frame)
+city_entry.pack(side=tk.LEFT, padx=(0, 10))
+city_entry.insert(0, "Enter City")
+
+get_weather_btn = tk.Button(frame, text="Get Weather", command=lambda: get_weather_gui(api_key, city_entry.get()))
+get_weather_btn.pack(side=tk.LEFT)
+
+root.mainloop()
