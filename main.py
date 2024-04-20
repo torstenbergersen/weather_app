@@ -2,7 +2,7 @@ import requests
 import json
 import tkinter as tk
 from tkinter import messagebox
-
+from config import PRIVATE_API_KEY
 
 def get_weather_gui(api_key, city):
     try:
@@ -34,7 +34,7 @@ def get_weather_gui(api_key, city):
     except requests.exceptions.RequestException as req_err:
         messagebox.showerror("Error", f"An error occurred: {req_err}")
 
-api_key = '50958e31edcbbe4e49f8a733f4c117e8'
+api_key = PRIVATE_API_KEY
 
 root = tk.Tk()
 root.title("Weather App")
